@@ -21,12 +21,19 @@ public class Main {
 
             System.out.println("Hello! What is your name?");
             Scanner obj = new Scanner(System.in);
+            try {
             s = obj.nextLine();
             System.out.println("Well, " + s + ", I am thinking of a number between 1 & 20. Take a guess..");
+            }
+            catch (Exception e) {
+                System.out.println("Please enter a valid input");
+            }
             int value = (int) (Math.random()*(max-min)) + min;
-            ++tries;
 
+            try {
             do {
+
+
                 a = obj.nextInt();
                 if (a == value) {
                     System.out.println("You guessed it! The number was " + value);
@@ -43,6 +50,8 @@ public class Main {
                 if (tries == maxAttempts) {
                     System.out.println("Out of tries! The number was " + value);
                 }
+
+
             } while (tries != maxAttempts);
 
 
@@ -53,7 +62,9 @@ public class Main {
             } else {
                 play = false;
             }
-        }
+        }  catch (Exception e) {
+                System.out.println("Please enter a number");
 
     }
 }
+    }}
