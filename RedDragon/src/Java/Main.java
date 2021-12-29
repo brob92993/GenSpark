@@ -1,36 +1,58 @@
-
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-        // write your code here
+    public void begin(){
 
-        System.out.println("You are in a land full of dragons.");
-        System.out.println("In front of you, you see two caves.");
-        System.out.println("In one cave, the dragon is friendly and will share his treasure with you");
-        System.out.println("The other dragon is greedy and hungry and will eat you on sight");
-        System.out.println("Which cave will you go into? 1? or 2..");
+        System.out.println(start());
 
-        try {
-            Scanner getInput = new Scanner(System.in);
-            String input = getInput.nextLine();
-            if (input == "1") {
-                System.out.println("You approach the cave...");
-                System.out.println("It is dark and spooky...");
-                System.out.println("A large dragon jumps out in front of you! He opens his jaws and...");
-                System.out.println("Gobbles you down in one bite!");
+        Scanner input = new Scanner(System.in);
 
-            } else {
-                System.out.println("You approach the cave...");
-                System.out.println("And a bright beam of light appears!");
-                System.out.println("Next thing you know, you're on the back of a large (but friendly) dragon!");
-                System.out.println("You and your dragon soar off into the infinite realm, never to be seen again...");
+        try{
+            System.out.println(getOption( input.nextInt()));
 
-            }
-        } catch (Exception e) {
-            System.out.println("Please enter a valid number");
-            return;
+        }catch (InputMismatchException e){
+            System.out.println("Error: Not a number");
         }
+    }
+
+    public String getOption(int choice){
+        if (choice == 1)
+            return optionOne();
+
+        if (choice == 2)
+            return optionTwo();
+        return invalid();
+    }
+
+    public String start(){
+        return ("\nYou are in a land full of dragons. In front of you,\n" +
+                "you see two caves. In one cave, the dragon is friendly\n" +
+                "and will share his treasure with you. The other dragon\n" +
+                "is greedy and hungry and will eat you on sight!\n" +
+                "Which cave will you go into? choose 1 or 2..\n");
+    }
+
+    public String optionOne(){
+        return ("\nYou approach the cave...\n" +
+                "And a bright beam of light appears!\n" +
+                "Next thing you know, you're on the back of a large (but friendly) dragon!\n" +
+                "You and your new dragon friend soar off into the infinite realm with his treasure, never to be seen again...");
+    }
+
+    public String optionTwo(){
+        return ("\nYou approach the cave...\n" +
+                "It is dark and spooky...\n" +
+                "A large dragon jumps out in front of you! He opens his jaws and...\n" +
+                "Gobbles you down in one bite!\n");
+    }
+
+    public String invalid(){
+        return ("\nYou made an invalid choice...choose 1 or 2\n");
+    }
+
+    public static void main(String[] args) {
+        new Main().begin();
     }
 }
