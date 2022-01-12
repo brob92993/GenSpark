@@ -1,10 +1,11 @@
 package Java;
 
 import java.util.Random;
+import java.util.Scanner;
 
-
-public class Human extends Main {
+public class Human {
     private int health = 10;
+    private String Name;
 
     public int getHealth() {
         return health;
@@ -16,7 +17,7 @@ public class Human extends Main {
 
     @Override
     public String toString(){
-        return  Main.class.getName() + "has" + this.health + "left!";
+        return   "Human has" + this.health + " health left!";
     }
 
     public Goblin attack(Goblin gob) {

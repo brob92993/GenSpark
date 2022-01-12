@@ -2,7 +2,7 @@ package Java;
 
 import java.util.Random;
 
-public class Goblin extends Main{
+public class Goblin  {
     private int health = 10;
 
     public int getHealth() {

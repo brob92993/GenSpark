@@ -1,4 +1,2 @@
-package Java;
-
-public class Land extends Main{
+package Java;public class Land z{
 }
