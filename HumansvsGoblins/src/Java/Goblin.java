@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Goblin  {
     private int health = 10;
+    
 
     public int getHealth() {
         return health;

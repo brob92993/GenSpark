@@ -39,6 +39,35 @@ public class Main {
 
     public void game() {
         Human h = new Human();
+        h.setName(getName());
+        System.out.println("Welcome to the game " + h.getName());
+        System.out.println("You are on the land");
+        System.out.println("You can move left(west), right(east), up(north), or down(south)! just type l, r, u, or d");
+        System.out.println("You can also quit! just type q");
+        
+        Scanner input = new Scanner(System.in);
+        String move = input.nextLine();
+
+    while (move != "q") {
+            if (move.equals("l")) {
+                System.out.println("You moved left(west)");
+            } else if (move.equals("r")) {
+                System.out.println("You moved right(east)");
+            } else if (move.equals("u")) {
+                System.out.println("You moved up(north)");
+            } else if (move.equals("d")) {
+                System.out.println("You moved down(south)");
+            } else if (move.equals("q")) {
+                        break;
+            } else {
+                System.out.println("You did not move");
+            }
+             move = input.nextLine();
+        }
+    }
+
+    private void quitGame() {
+        setPlayAgain("n");
     }
 
     private void playGame() {

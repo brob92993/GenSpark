@@ -1,2 +1,6 @@
-package Java;public class Land z{
+package Java;
+
+public class Land {
+    
+
 }
