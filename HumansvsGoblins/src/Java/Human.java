@@ -3,11 +3,13 @@ package Java;
 import java.util.Random;
 import java.util.Scanner;
 
+
 public class Human {
-    private int health = 10;
-    private String Name;
 
-
+    Random rand = new Random();
+    private int health = 20;
+    private int attack = rand.nextInt(10)+1;
+   
     public int getHealth() {
         return health;
     }
@@ -16,26 +18,16 @@ public class Human {
         this.health = health;
     }
 
-    public String getName(){
-        return Name;
+    public int getAttack() {
+        return attack;
     }
 
-    public void setName(String name){
-        this.Name = name;
+    public void setAttack(int attack) {
+        this.attack = attack;
     }
 
     @Override
     public String toString(){
-        return   "Human has" + this.health + " health left!";
-    }
-
-    public Goblin attack(Goblin gob) {
-        Random random = new Random();
-        
-        int newGobHealth = (random.nextInt(10)+1) - gob.getHealth();
-        gob.setHealth(newGobHealth);
-        
-
-        return gob;
+        return   "You have " + this.health + " health left!";
     }
 }
