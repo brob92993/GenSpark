@@ -1,13 +1,10 @@
-package Java;
-
 import java.util.Random;
 
+public class Human {
 
-public class Goblin  {
     Random rand = new Random();
     private int health = 20;
     private int attack = rand.nextInt(10)+1;
-    
 
     public int getHealth() {
         return health;
@@ -15,7 +12,7 @@ public class Goblin  {
 
     public void setHealth(int health) {
         this.health = health;
-    }   
+    }
 
     public int getAttack() {
         return attack;
@@ -27,7 +24,6 @@ public class Goblin  {
 
     @Override
     public String toString(){
-        return "Mr. Gob has " + this.health + " health left!";
+        return   "You have " + this.health + " health left!";
     }
 }
-

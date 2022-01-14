@@ -1,15 +1,12 @@
-package Java;
-
 import java.util.Random;
-import java.util.Scanner;
 
-
-public class Human {
+public class Goblin {
 
     Random rand = new Random();
     private int health = 20;
     private int attack = rand.nextInt(10)+1;
-   
+
+
     public int getHealth() {
         return health;
     }
@@ -28,6 +25,6 @@ public class Human {
 
     @Override
     public String toString(){
-        return   "You have " + this.health + " health left!";
+        return "Mr. Gob has " + this.health + " health left!";
     }
 }
